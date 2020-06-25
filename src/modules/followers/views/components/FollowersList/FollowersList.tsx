@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import Follower from 'types/follower';
 
 import styles from './FollowersList.module.scss';
@@ -15,11 +14,11 @@ function isAChoosenFollower(choosenFollowers: Array<Follower>, follower: Followe
 }
 
 const FollowersList: React.FC<Props> = ({ followers, choosenFollowers, addFollower }) => (
-  <ul className={classnames(styles['followers-list'])}>
+  <ul className={styles['followers-list']}>
     {followers.map((follower) => (
       <li
         key={follower.id}
-        className={classnames(isAChoosenFollower(choosenFollowers, follower) && styles['is-choosen'], 'margin-bt-2')}
+        className={`margin-bt-2 ${isAChoosenFollower(choosenFollowers, follower) && styles['is-choosen']}`}
         onClick={() => addFollower(follower)}
       >
         <strong>{follower.name}: </strong>

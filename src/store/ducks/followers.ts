@@ -23,7 +23,7 @@ export default function followers(state: Array<Follower> = [], action: Action): 
   }
 }
 
-// actions creators
+// Actions creators
 export function addFollower(follower: Follower): Action {
   return {
     type: FollowersActions.ADD_FOLLOWER,

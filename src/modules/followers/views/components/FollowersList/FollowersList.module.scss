@@ -1,7 +1,7 @@
 .followers-list {
   & > li {
     cursor: pointer;
-
+    
     &.is-choosen,
     &.is-choosen > span {
       color: #ccc;

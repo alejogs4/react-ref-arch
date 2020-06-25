@@ -5,7 +5,6 @@ import FollowersContainer from '../containers/FollowersContainer';
 import { FollowersClient } from '../services/followers_client';
 import store from 'store';
 import Followers from '../views/Followers';
-import Follower from 'types/follower';
 
 function renderWithRedux(ui: React.ReactElement, { ...renderOptions } = {}) {
   const Wrapper: React.SFC = ({ children }) => <Provider store={store}>{children}</Provider>;
@@ -22,7 +21,7 @@ describe('Followers tests', () => {
       const { container } = renderWithRedux(<FollowersContainer followersClient={mockFollowersClient} />);
 
       expect(container).toBeTruthy();
-      expect(mockFollowersClient.getAll).toBeCalled();
+      expect(mockFollowersClient.getAll).toBeCalledTimes(1);
     });
   });
 
