@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: 100%;
+
+  @for $i from 1 through 5 {
+    &.column-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  &.column-gap-1 {
+    column-gap: 0.5em;
+  }
+
+  &.column-gap-2 {
+    column-gap: 1em;
+  }
+
+  &.column-gap-3 {
+    column-gap: 1.5em;
+  }
+
+  &.column-gap-4 {
+    column-gap: 2em;
+  }
+}
+

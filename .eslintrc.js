@@ -12,7 +12,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['testing-library'],
+  plugins: ['testing-library', 'react-hooks'],
   extends: [
     'plugin:testing-library/react',
     'plugin:react/recommended',
@@ -20,5 +20,9 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
-  rules: {},
+  rules: {
+    'react/prop-types': 'off',
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
 };

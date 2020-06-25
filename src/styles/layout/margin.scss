@@ -1,0 +1,10 @@
+.margin-x {
+  margin: 0 var(--default-margin);
+}
+
+@for $i from 1 through 5 {
+  .margin-bt-#{$i} {
+    --default-margin: #{0.5 * $i}em;
+    margin: 0 0 var(--default-margin) 0;
+  }
+}

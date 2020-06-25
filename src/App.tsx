@@ -1,13 +1,18 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './routing/Routes';
+import { Provider } from 'react-redux';
 
-const App: React.FC<unknown> = () => {
-  return (
+import Header from 'global/Header/Header';
+import Routes from 'routing/Routes';
+import store from 'store';
+
+const App: React.FC<unknown> = () => (
+  <Provider store={store}>
     <BrowserRouter>
+      <Header />
       <Routes />
     </BrowserRouter>
-  );
-};
+  </Provider>
+);
 
 export default App;
